@@ -1,0 +1,566 @@
+#wrapper {
+    width: 100%;
+}
+#page-wrapper {
+    padding:5em 2em 2.5em;
+	background-color: #F1F1F1;
+}
+.navbar-top-links {
+    margin-right: 0;
+}
+
+.navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+
+.navbar-top-links li a {
+    padding: 15px;
+    min-height: 50px;
+}
+
+.navbar-top-links .dropdown-menu li {
+    display: block;
+}
+
+.navbar-top-links .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-top-links .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+
+.navbar-top-links .dropdown-menu li a div {
+    white-space: normal;
+}
+
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+    width: 310px;
+    min-width: 0;
+}
+.navbar-top-links .dropdown-messages {
+    margin-left: 5px;
+}
+.navbar-top-links .dropdown-tasks {
+    margin-left: -59px;
+}
+
+.navbar-top-links .dropdown-alerts {
+    margin-left: -123px;
+}
+
+.navbar-top-links .dropdown-user {
+    right: 0;
+    left: auto;
+}
+
+.sidebar .sidebar-nav.navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.sidebar .sidebar-search {
+    padding: 15px;
+}
+.sidebar .arrow {
+    float: right;
+}
+
+.sidebar .fa.arrow:before {
+    content: "\f105";
+}
+
+.sidebar .active>a>.fa.arrow:before {
+    content: "\f107";
+}
+
+.sidebar .nav-second-level li,
+.sidebar .nav-third-level li {
+    border-bottom: 0!important;
+	margin-bottom: 0;
+}
+
+.sidebar .nav-second-level li a {
+	padding:10px 0;
+    padding-left: 65px;
+    font-size: .9em;
+}
+.sidebar .nav-third-level li a {
+    padding-left: 52px;
+}
+.search-md {
+    width: 98%;
+    height: 35px;
+    margin-top: 2px;
+    border: 1px solid rgb(151, 150, 150);
+    border-radius: 8px;
+}
+.img-icon {
+    width: 25px;
+    height: 25px;
+    margin-left: 3px;
+}
+.download {
+    margin-top:2px;
+}
+.filter {
+    margin-top:3px;
+}
+.icon-md {
+    margin-left: -7.5px;
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #ff1900;
+  border-radius: 8px;
+  /* background-color: #ff1900; */
+  cursor: pointer;
+  display: flex;
+  align-self: center;
+  font-weight: 400;
+  text-decoration: none;
+}
+.icon-md span {
+    font-size: 10pt;
+    margin-top: 33px;
+    margin-left: -32px;
+}
+.nav-mitra {
+    margin:auto;
+    text-align: center;
+    width: 100%;
+    margin-top: -15px;
+    margin-bottom: 30px;
+
+}
+
+.nav-mitra ul ul {
+    display: none;
+}
+
+.nav-mitra ul li:hover > ul{
+    display: block;
+    width: 250px;
+    text-align: left;
+    margin-top: 2px;
+}
+
+.nav-mitra ul {
+    background: #ffffff;
+    padding: 0 20px;
+    list-style: none;
+    position: relative;
+    display: inline-table;
+    width: 100%;
+    box-shadow: 3px 3px rgb(223, 223, 223);
+    border-radius: 10px;
+}
+
+.nav-mitra ul:after {
+    content: "";
+    clear:both;
+    display: block;
+}
+
+.nav-mitra ul li{
+    float:left;
+}
+
+.nav-mitra ul li:hover > a{
+    background:#53bd84;
+    color: white;
+}
+
+.nav-mitra ul li a:hover{
+    color:rgb(255, 255, 255);
+}
+
+.nav-mitra ul li a{
+    display: block;
+    padding: 10px;
+    color: rgb(116, 116, 116);
+    text-decoration: none;
+    margin-left: 10px;
+}
+.nav-mitra ul li a img{
+    width: 30px;
+    height: 30px;
+}
+.home img{
+    margin-top: 8px;
+    float: right;
+    width: 30px;
+    height: 30px;
+
+}
+
+.nav-mitra ul ul{
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 0;
+    position: absolute;
+    top:100%;
+}
+
+.nav-mitra ul ul li{
+    float:none;
+    border-top: 1px soild #53bd84;
+    border-bottom: 5px solid #F1F1F1;
+    position: relative;
+    border-radius: 10px;
+}
+
+.nav-mitra ul ul li a{
+    color: #3cac09;
+    font-weight: bold;
+}
+.nav-mitra ul ul li a:hover{
+    background-color: #53bd84;
+}
+
+.nav-mitra ul ul ul{
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.title-menu {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgb(223, 223, 223);
+}
+.title-desc {
+    padding: 0 20px;
+    padding-top: 10px;
+    margin-left: 22px;
+    padding-bottom: 10px;
+}
+.title-desc a {
+    font-size: 10pt;
+    text-decoration:underline;
+}
+.title-desc h3 {
+    font-weight: bold;
+}
+
+.table-mitra {
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    margin-top: 20px;
+}
+.header {
+    margin-top: 20px;
+    height: 70px;
+    background-color: white;
+    border-radius: 10px;
+}
+.title-header {
+    padding: 0 20px;
+    padding-top: 25px;
+    float: left;
+    width: 50%;
+}
+.title-header h4 a {
+    color: #3cac09;
+}
+.icon-header {
+    width: 50%;
+    float: right;
+}
+.position__right {
+    padding: 0 20px;
+    padding-top: 20px;
+    float: right;
+    display: flex;
+    align-items: center;
+}
+.icon-header-right {
+    margin-left: 30px;
+}
+
+.icon-header-right img{
+    margin-right: 10px;
+    width: 30px;
+    border-radius: 5px;
+}
+.desc__ {
+    margin-left: -1px;
+    margin-bottom: 20px;
+}
+.desc__ span {
+    font-size: 9pt;
+}
+
+.desc__upload {
+    margin-left: -2px;
+}
+.desc__filter {
+    margin-left: 5.5px;
+}
+.download__img {
+    margin-right: 5px;
+    margin-left: 3px;
+}
+.desc__download {
+    margin-left: -1px;
+}
+
+.search {
+    border: 1px solid grey;
+    border-radius: 5px;
+    font-size: 12pt;
+    height: 30px;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+
+.table-custom thead tr{
+    background-color: rgb(80, 170, 77);
+}
+.table-custom tbody tr .no {
+    text-align: center;
+}
+.th {
+    width: 100%;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px
+}
+.border-side-1 {
+    border-radius: 10px 0px 0px 10px;
+}
+.border-side-2 {
+    border-radius: 0px 10px 10px 0px;
+}
+.th-no {
+    width: 100%;
+    background-color: white;
+    padding: 10px 5px 10px 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+.th-action {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+.td-action {
+    text-align: center;
+}
+.td-action a{
+    background-color: rgb(247, 44, 128);
+    color: white;
+}
+.td-action a:hover {
+    background-color: rgb(206, 0, 86);
+    color: white;
+}
+
+.table1 {
+    font-family: sans-serif;
+    background-color: white;
+    border-collapse: collapse;
+    width: 96%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.table1 .thead{
+    background: #4c9b4c;
+    color: rgb(63, 63, 63);
+    font-weight: normal;
+    height: 70px;
+}
+.table1 .thead th span{
+    padding: 10px;
+    padding-right: 60px;
+    background-color: white;
+    border-radius: 5px;
+}
+.table1 .thead .th-no span{
+    padding: 10px;
+    text-align: center;
+}
+.table1 .thead .th-action span{
+    padding: 10px 18px 10px 18px;
+    text-align: center;
+}
+
+.table1, th, td {
+    padding: 20px 20px;
+    text-align: left;
+}
+.detail tr td input {
+    border: 1px solid rgb(231, 224, 224);
+    border-radius: 8px;
+    padding: 10px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 12pt;
+    margin-top: 5px;
+}
+.detail tr td {
+    font-size: 10pt;
+}
+.detail tr td textarea{
+    width: 100%;
+    height: 160px;
+    padding: 20px;
+    text-align: justify;
+    border: 1px solid rgb(231, 224, 224);
+    border-radius: 8px;
+    font-style: normal;
+    font-size: 12pt;
+}
+.detail tr td {
+    font-style: italic;
+}
+
+
+
+/*detail mitra*/
+.card_mitra {
+    width: 100%;
+    padding: 10px 0px 10px 20px;
+    margin-top: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px rgb(223, 223, 223);
+    height: 70px;
+}
+.card_mitra .card__mitra_title {
+    margin-top: 10px;
+}
+.card_mitra .card__mitra_title h4 {
+    font-weight: bold;
+}
+.card_mitra .card__mitra_title h4 a{
+    margin-left: 22px;
+    font-size: 14pt;
+    text-decoration: underline;
+}
+.card_mitra .card__mitra_title h4 a:hover {
+    color: #3cac09;
+}
+.card_mitra .card__mitra_title h4 span{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.card_mitra .card__mitra_title img{
+    width: 30px;
+    height: 30px;
+    float: right;
+    margin-top: -26px;
+    margin-right: 18px;
+    border-radius: 5px;
+}
+.card__mitra_txtdownload {
+    float: right;
+    font-size: 9pt;
+    margin-right: -40px;
+    margin-top: 2px;
+    color: grey;
+}
+
+.title__mitra_detail {
+    padding: 20px;
+    margin-left: 22px;
+    font-weight: bold;
+}
+@media(min-width:768px){
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+
+
+}
+@media (max-width:768px) {
+    .nav-mitra ul li a img{
+        width: 20px;
+        height: 20px;
+    }
+    .nav-mitra ul li a{
+        font-size: 10pt;
+        margin-left: -10px;
+    }
+    .home {
+        margin-left: 10px;
+    }
+    .title-desc {
+        padding: 0 15px;
+        padding-top: 10px;
+        margin-left: 0px;
+        padding-bottom: 10px;
+    }
+    .table-custom {
+        font-size: 10pt;
+    }
+    .icon-header {
+        width: 50%;
+        float: right;
+    }
+    .position__right {
+        padding: 0 10px;
+        padding-top: 20px;
+        float: right;
+        display: flex;
+        align-items: center;
+    }
+    .icon-header-right {
+        margin-left: 10px;
+    }
+
+    .icon-header-right img{
+        margin-right: 2px;
+        width: 25px;
+        border-radius: 3px;
+    }
+    .desc__ {
+        margin-left: -1px;
+        margin-bottom: 20px;
+    }
+    .desc__ span {
+        font-size: 7pt;
+    }
+
+    .desc__upload {
+        margin-left: -2px;
+    }
+    .desc__filter {
+        margin-left: 2px;
+    }
+    .download__img {
+        margin-left: 5px;
+    }
+    .desc__download {
+        margin-left: -1px;
+    }
+
+    .search {
+        border: 1px solid grey;
+        border-radius: 5px;
+        font-size: 10pt;
+        height: 25px;
+        font-style: italic;
+        margin-bottom: 40px;
+    }
+}
