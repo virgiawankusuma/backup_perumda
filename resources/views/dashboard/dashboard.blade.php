@@ -1,77 +1,98 @@
 @extends('layout.general_layout')
 @section('content')
-<div class="col_3" style="margin-top: -20px">
-    <div class="col-md-3 widget widget1">
-        <div class="r3_counter_box">
-            <i class="pull-left fa fa-dollar icon-rounded"></i>
-            <div class="stats">
-            <h5><strong>$452</strong></h5>
-            <span>Total Revenue</span>
+    <div class="row">
+        <div class="col-md-3">
+            <div class="r3_counter_box shadow">
+                <i class="pull-left fa fa-dollar icon-rounded"></i>
+                <div class="stats">
+                    <h5><strong>$452</strong></h5>
+                    <span>Total Revenue</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3 widget widget1">
-        <div class="r3_counter_box">
-            <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
-            <div class="stats">
-            <h5><strong>$1019</strong></h5>
-            <span>Total Sales Per Day</span>
+        <div class="col-md-3">
+            <div class="r3_counter_box shadow">
+                <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
+                <div class="stats">
+                    <h5><strong>$1019</strong></h5>
+                    <span>Online Revenue</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3 widget widget1">
-        <div class="r3_counter_box">
-            <i class="pull-left fa fa-money user2 icon-rounded"></i>
-            <div class="stats">
-            <h5><strong>$1012</strong></h5>
-            <span>Monthly Revenue</span>
+        <div class="col-md-3">
+            <div class="r3_counter_box shadow">
+                <i class="pull-left fa fa-money user2 icon-rounded"></i>
+                <div class="stats">
+                    <h5><strong>$1012</strong></h5>
+                    <span>Expenses</span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="col-md-3 widget widget1">
-        <div class="r3_counter_box">
-            <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
-            <div class="stats">
-            <h5><strong>$450</strong></h5>
-            <span>Monthly Target</span>
+        <div class="col-md-3">
+            <div class="r3_counter_box shadow">
+                <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
+                <div class="stats">
+                    <h5><strong>$450</strong></h5>
+                    <span>Expenditure</span>
+                </div>
             </div>
         </div>
+        <div class="clearfix"> </div>
     </div>
 
-    <div class="clearfix"> </div>
-</div>
-<div class="row-one widgettable" style="margin-top: 30px">
-    <div class="col-md-12 content-top-2 card" style="width: 98.5%">
-        <div class="agileinfo-cdr">
+    <div class="row my-1">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <style>
                 #map {
                     height: 420px;
                     width: 100%;
+                    z-index: 0;
                 }
 
-                .leaflet-popup-content-wrapper, .leaflet-popup-tip{
-                  /* background: none; */
-                  padding: 0;
-                  color: #000;
-                  border-radius: 0.25rem;
+                .leaflet-popup-content-wrapper,
+                .leaflet-popup-tip {
+                    /* background: none; */
+                    padding: 0;
+                    color: #000;
+                    border-radius: 0.25rem;
                 }
 
-                .leaflet-popup-content{
-                  margin: 0 !important;
-                  width: 250px;
+                .leaflet-popup-content {
+                    margin: 0 !important;
+                    width: 250px;
                 }
 
-                .leaflet-popup-content p{
-                  margin: 0;
+                .leaflet-popup-content p {
+                    margin: 0;
                 }
+
+                .leaflet-container a.leaflet-popup-close-button {
+                    display: none;
+                }
+
+                .map-inner {
+                    z-index: 9999;
+                    position: absolute;
+                }
+
             </style>
-            <div class="card shadow">
-              <div class="card-body">
-                <div id="map"></div>
-              </div>
+            <div class="card-custom shadow">
+                <div class="card-custom-body">
+                    <div id="map">
+                        <div class="map-inner">
+                            <form class="searchbox-wrapper" action="" method="post">
+                                <input class="searchbox-input" type="search" placeholder="Cari Toko" aria-label="Search">
+                                <button class="btn searchbox-button" type="submit">
+                                    <span class="glyphicon glyphicon-search"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
             <script>
-                let map = L.map('map').setView([-6.583858098282382, 110.66215780395581], 15);
+                let map = L.map('map').setView([-6.580282433016075, 110.67910468451456], 13);
+                map.zoomControl.setPosition('bottomright');
                 L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                     maxZoom: 18,
@@ -82,317 +103,295 @@
                 }).addTo(map);
 
                 const storeMarker = L.icon({
-                  iconUrl: 'assets/images/store%202.png',
-                  iconSize:     [38,],
-                  iconAnchor:   [22,]
+                    iconUrl: 'assets/images/store%202.png',
+                    iconSize: [38, ],
+                    iconAnchor: [22, ]
                 });
 
-                L.marker([-6.583858098282382, 110.66215780395581], {icon: storeMarker})
-                .addTo(map)
-                .bindPopup(`
-                <div class="card border-0">
-                  <img src="https://lh5.googleusercontent.com/p/AF1QipMob9uBIWUTo7pUe5VBslaySHK4ncMUDZPoDcBa=w426-h240-k-no" class="card-img-top" style="max-height:100px" alt="Perumda Aneka Usaha Kabupaten Jepara">
-                  <div class="card-body row">
-                    <div class="col-md-8 mb-1">
-                      <h5 class="card-title">Perumda Aneka Usaha Kabupaten Jepara</h5>
-                      <a href="#" class="text-muted small">City district office</a>
-                      <p class="text-muted small">
-                        <span>Closed</span>
-                        &bull;
-                        <span>Opens 7:30AM Thu</span>
-                      </p>
-                    </div>
-                    <div class="col-md-4 d-inline-block mb-1 px-0">
-                      <a class="btn btn-outline-primary btn-sm rounded-circle">
-                        <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
-                      </a>
-                      <a class="btn btn-outline-primary btn-sm rounded-circle">
-                        <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                `)
+                L.marker([-6.583858098282382, 110.66215780395581], {
+                        icon: storeMarker
+                    })
+                    .addTo(map)
+                    .bindPopup(`
+                        <div class="card-custom">
+                            <img src="https://lh5.googleusercontent.com/p/AF1QipMob9uBIWUTo7pUe5VBslaySHK4ncMUDZPoDcBa=w426-h240-k-no" class="card-custom-img-top" style="max-height:100px" alt="Perumda Aneka Usaha Kabupaten Jepara">
+                            <div class="card-custom-body row">
+                            <div class="col-md-8" style="margin-bottom:1rem">
+                                <h5 class="card-custom-title">Perumda Aneka Usaha Kabupaten Jepara</h5>
+                                <a href="#" class="text-muted small">City district office</a>
+                                <p class="text-muted small">
+                                <span>Closed</span>
+                                &bull;
+                                <span>Opens 7:30AM Thu</span>
+                                </p>
+                            </div>
+                            <div class="col-md-4">
+                                <a class="button-maps">
+                                <span class="glyphicon glyphicon-send" aria-hidden="true"></span>
+                                </a>
+                                <a class="button-maps">
+                                <span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    `);
             </script>
-
         </div>
     </div>
-</div>
-<div class="row-one widgettable" style="width: 98.5%">
-    <div class="col-md-9 content-top-2 card">
-        <div class="agileinfo-cdr">
-            <div class="card-header">
-                <h3>Weekly Sales</h3>
-            </div>
 
-                <div id="Linegraph" style="height: 363px">
+    <div class="row-one widgettable">
+        <div class="col-md-8 content-top-2 card">
+            <div class="agileinfo-cdr">
+                <div class="card-header">
+                    <h3>Weekly Sales</h3>
                 </div>
 
-        </div>
-    </div>
-    <div class="col-md-3 stat">
-        <div class="content-top-1">
-        <div class="col-md-6 top-content">
-            <h5>Rojoku Store</h5>
-            <label>1283+</label>
-        </div>
-        <div class="col-md-6 top-content1">
-            <div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
-        </div>
-         <div class="clearfix"> </div>
-        </div>
-        <div class="content-top-1">
-        <div class="col-md-6 top-content">
-            <h5>Rojoku Mart</h5>
-            <label>1283+</label>
-        </div>
-        <div class="col-md-6 top-content1">
-            <div id="demo-pie-2" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
-        </div>
-         <div class="clearfix"> </div>
-        </div>
-        <div class="content-top-1">
-        <div class="col-md-6 top-content">
-            <h5>Rojoku Corporate</h5>
-            <label>1283+</label>
-        </div>
-        <div class="col-md-6 top-content1">
-            <div id="demo-pie-3" class="pie-title-center" data-percent="45"> <span class="pie-value"></span> </div>
-        </div>
-         <div class="clearfix"> </div>
-        </div>
-    </div>
-</div>
-<div class="col_1" style="width: 98.5%">
-    <div class="col-md-4 span_8">
-        <div class="activity_box">
-            <h2>SARAN DAN MASUKAN</h2>
-            <div class="scrollbar" id="style-1">
-                <a href="#">
-                    <div class="activity-row">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5 style="color: red">KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="activity-row">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5 style="color: red">KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="activity-row">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5 style="color: red">KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="activity-row">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5 style="color: red">KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
+                <div id="Linegraph" style="width: 98%; height: 350px">
+                </div>
+
             </div>
         </div>
-    </div>
-    <div class="col-md-4 span_8">
-        <div class="activity_box activity_box1">
-            <h3>KOMPLAIN</h3>
-            <div class="scrollbar" id="style-3">
-                <a href="#">
-                    <div class="activity-row activity-row1">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5>KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                        </div>
-                        <div class="col-xs-12 activity-desc">
-                            <h5>KOMPLAIN</h5>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="col-xs-12 activity-desc">
-                            <h5>PENEYELESAIAN</h5>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="activity-row activity-row1">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5>KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                        </div>
-                        <div class="col-xs-12 activity-desc">
-                            <h5>KOMPLAIN</h5>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="col-xs-12 activity-desc">
-                            <h5>PENEYELESAIAN</h5>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="activity-row activity-row1">
-                        <div class="col-xs-12 activity-desc" style="margin-top: 10px">
-                            <h5>KOPI ROJOKU POUCH</h5>
-                            <h6 style="color: rgb(54, 54, 54)">Kamis, 23 April 2022</h6>
-                            <p>Pak Yasin - Toko Jaya Makmur</p>
-                        </div>
-                        <div class="col-xs-12 activity-desc">
-                            <h5>KOMPLAIN</h5>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="col-xs-12 activity-desc">
-                            <h5>PENEYELESAIAN</h5>
-                            <span>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                                ... <a href="" style="color: rgb(255, 78, 78); font-weight: bold">Read More</a>
-                            </span>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="col-md-4 span_8">
-        <div class="activity_box activity_box2">
-            <h3>JADWAL PENGIRIMAN</h3>
-            <div class="scrollbar" id="style-2">
-                <div class=" activity-row1">
-                    <div class="col-xs-12 activity-desc" style="background-color: rgb(231, 231, 231)">
-                        <div style="margin-top: 10px; margin-bottom: 10px;">
-                            <h5 style="color: #00a78e">KAMIS, 23 APRIL 2022</h5>
-                            <h6>Jadwal Pengiriman</h6>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 activity-desc" style="margin-top:10px;background-color: rgb(253, 252, 196)">
-                        <div style="margin-top: 10px; margin-bottom: 10px;">
-                            <table style="width: 100%;font-size: 10pt;">
-                                <thead>
-                                    <th>Pak Yasin - Toko Jaya Makmur</th>
-                                    <th style="text-align: right">DO.231234.98</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2">Jl.A Yani no.23 Komplek ruko-Kedung-Bogel-Jepara</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rojoku MIneral 330</td>
-                                        <td>20 DUS</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rojoku Kopi Pouch</td>
-                                        <td>5 DUS</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Minyak Goreng Resto</td>
-                                        <td>100 DUS</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div style="margin-top: 5px;">
-                                <div style="font-size: 10pt; font-weight: bold">
-                                    Petugas - Arga
-                                </div>
-                                <div style="font-size: 11pt; font-weight: bold;color: red">
-                                    BELUM TERKIRIM
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-12 activity-desc" style="margin-top:10px;background-color: rgb(211, 255, 211)">
-                        <div style="margin-top: 10px; margin-bottom: 10px;">
-                            <table style="width: 100%;font-size: 10pt">
-                                <thead>
-                                    <th>Pak Jhony - Toko Mandiri</th>
-                                    <th style="text-align: right">DO.231234.99</th>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td colspan="2">Jl.A Yani no.23 Komplek ruko-Kedung-Bogel-Jepara</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rojoku MIneral 330</td>
-                                        <td>20 DUS</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Rojoku Kopi Pouch</td>
-                                        <td>5 DUS</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Minyak Goreng Resto</td>
-                                        <td>100 DUS</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <div style="margin-top: 5px;">
-                                <div style="font-size: 10pt; font-weight: bold">
-                                    Petugas - Arga
-                                </div>
-                                <div style="font-size: 11pt; font-weight: bold;color: #00a78e">
-                                    TERKIRIM
-                                </div>
-                            </div>
-                        </div>
+        <div class="col-md-4 stat">
+            <div class="content-top-1">
+                <div class="col-md-6 top-content">
+                    <h5>Sales</h5>
+                    <label>1283+</label>
+                </div>
+                <div class="col-md-6 top-content1">
+                    <div id="demo-pie-1" class="pie-title-center" data-percent="45"> <span class="pie-value"></span>
                     </div>
                 </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="content-top-1">
+                <div class="col-md-6 top-content">
+                    <h5>Reviews</h5>
+                    <label>2262+</label>
+                </div>
+                <div class="col-md-6 top-content1">
+                    <div id="demo-pie-2" class="pie-title-center" data-percent="75"> <span class="pie-value"></span>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="content-top-1">
+                <div class="col-md-6 top-content">
+                    <h5>Visitors</h5>
+                    <label>12589+</label>
+                </div>
+                <div class="col-md-6 top-content1">
+                    <div id="demo-pie-3" class="pie-title-center" data-percent="90"> <span class="pie-value"></span>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
             </div>
         </div>
         <div class="clearfix"> </div>
     </div>
-    <div class="clearfix"> </div>
-</div>
 
+    <div class="col_1">
+        <div class="col-md-4 span_8">
+            <div class="activity_box">
+                <h2>Inbox</h2>
+                <div class="scrollbar" id="style-1">
+                    <div class="activity-row">
+                        <div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt="" /></div>
+                        <div class="col-xs-7 activity-desc">
+                            <h5><a href="#">Michael Chris</a></h5>
+                            <p>Hey ! There I'm available.</p>
+                        </div>
+                        <div class="col-xs-2 activity-desc1">
+                            <h6>12:05 PM</h6>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row">
+                        <div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt="" /></div>
+                        <div class="col-xs-7 activity-desc">
+                            <h5><a href="#">Alexander</a></h5>
+                            <p>Hey ! There I'm available.</p>
+                        </div>
+                        <div class="col-xs-2 activity-desc1">
+                            <h6>12:06 PM</h6>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row">
+                        <div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive" alt="" /></div>
+                        <div class="col-xs-7 activity-desc">
+                            <h5><a href="#">Daniel Lucas</a></h5>
+                            <p>Hey ! There I'm available.</p>
+                        </div>
+                        <div class="col-xs-2 activity-desc1">
+                            <h6>01:30 PM</h6>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row">
+                        <div class="col-xs-3 activity-img"><img src='images/2.jpg' class="img-responsive" alt="" /></div>
+                        <div class="col-xs-7 activity-desc">
+                            <h5><a href="#">Jackson Jacob</a></h5>
+                            <p>Hey ! There I'm available.</p>
+                        </div>
+                        <div class="col-xs-2 activity-desc1">
+                            <h6>01:50 PM</h6>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row">
+                        <div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive" alt="" /></div>
+                        <div class="col-xs-7 activity-desc">
+                            <h5><a href="#">David Samuel</a></h5>
+                            <p>Hey ! There I'm available.</p>
+                        </div>
+                        <div class="col-xs-2 activity-desc1">
+                            <h6>12:20 PM</h6>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+
+                    <div class="activity-row">
+                        <div class="col-xs-3 activity-img"><img src='images/4.jpg' class="img-responsive" alt="" /></div>
+                        <div class="col-xs-7 activity-desc">
+                            <h5><a href="#">laura Smith</a></h5>
+                            <p>Hey ! There I'm available.</p>
+                        </div>
+                        <div class="col-xs-2 activity-desc1">
+                            <h6>12:50 PM</h6>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <form action="#" method="post">
+                    <input type="text" value="Enter your text" onfocus="this.value = '';"
+                        onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4 span_8">
+            <div class="activity_box activity_box1">
+                <h3>chat</h3>
+                <div class="scrollbar" id="style-3">
+                    <div class="activity-row activity-row1">
+                        <div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive"
+                                alt="" /><span>06:01 AM</span></div>
+                        <div class="col-xs-5 activity-img1">
+                            <div class="activity-desc-sub">
+                                <h5>Michael Chris</h5>
+                                <p>Hello ! this is Michael chris</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 activity-desc1"></div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row activity-row1">
+                        <div class="col-xs-2 activity-desc1"></div>
+                        <div class="col-xs-7 activity-img2">
+                            <div class="activity-desc-sub1">
+                                <h5>Alexander</h5>
+                                <p>Hi,How are you ? What about our next meeting?</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive"
+                                alt="" /><span>06:02 AM</span></div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row activity-row1">
+                        <div class="col-xs-3 activity-img"><img src='images/1.jpg' class="img-responsive"
+                                alt="" /><span>06:05 AM</span></div>
+                        <div class="col-xs-5 activity-img1">
+                            <div class="activity-desc-sub">
+                                <h5>Michael Chris</h5>
+                                <p>Yeah fine, Hope you the same</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-4 activity-desc1"></div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="activity-row activity-row1">
+                        <div class="col-xs-2 activity-desc1"></div>
+                        <div class="col-xs-7 activity-img2">
+                            <div class="activity-desc-sub1">
+                                <h5>Alexander</h5>
+                                <p>Wow that's great</p>
+                            </div>
+                        </div>
+                        <div class="col-xs-3 activity-img"><img src='images/3.jpg' class="img-responsive"
+                                alt="" /><span>06:20 PM</span></div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+                <form action="#" method="post">
+                    <input type="text" value="Enter your text" onfocus="this.value = '';"
+                        onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4 span_8">
+            <div class="activity_box activity_box2">
+                <h3>todo</h3>
+                <div class="scrollbar" id="style-2">
+                    <div class="activity-row activity-row1">
+                        <div class="single-bottom">
+                            <ul>
+                                <li>
+                                    <input type="checkbox" id="brand" value="">
+                                    <label for="brand"><span></span> Integer sollicitudin lacinia condimentum.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand1" value="">
+                                    <label for="brand1"><span></span> ligula sit amet hendrerit init lorem.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand2" value="">
+                                    <label for="brand2"><span></span> Donec aliquam dolor eu augue condimentum.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand9" value="">
+                                    <label for="brand9"><span></span> at tristique Pain that produces no resultant.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand8" value="">
+                                    <label for="brand8"><span></span> Nulla finibus rhoncus turpis quis tristique.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand7" value="">
+                                    <label for="brand7"><span></span> Cupidatat non proident Praising pain.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand3" value="">
+                                    <label for="brand3"><span></span> libero vel elementum euismod, mauris tellus</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand4" value="">
+                                    <label for="brand4"><span></span> Donec aliquam dolor eu augue condimentum.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand5" value="">
+                                    <label for="brand5"><span></span> Orci varius natoque penatibus et magnis dis.</label>
+                                </li>
+                                <li>
+                                    <input type="checkbox" id="brand6" value="">
+                                    <label for="brand6"><span></span> parturient Dolorem ipsum quia.</label>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <form action="#" method="post">
+                    <input type="text" value="Enter your text" onfocus="this.value = '';"
+                        onblur="if (this.value == '') {this.value = 'Enter your text';}" required="">
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+        <div class="clearfix"> </div>
+
+    </div>
 @endsection
