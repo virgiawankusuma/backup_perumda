@@ -14,7 +14,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="sidebar-menu">
                     <li class="treeview">
-                        <a href="{{url('/')}}">
+                        <a href="{{url('/dashboard')}}">
                             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                         </a>
                     </li>

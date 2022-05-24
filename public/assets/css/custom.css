@@ -140,8 +140,6 @@
     margin:auto;
     text-align: center;
     width: 100%;
-    margin-top: -15px;
-    margin-bottom: 30px;
 
 }
 
@@ -153,7 +151,24 @@
     display: block;
     width: 250px;
     text-align: left;
-    margin-top: 2px;
+    margin-top: 5px;
+}
+
+.nav-mitra ul li:hover > a{
+    background:green;
+    color: white;
+}
+
+.nav-mitra ul li a:hover{
+    color:rgb(255, 255, 255);
+}
+
+.nav-mitra ul ul li a:hover{
+    background-color: green;
+}
+
+hover-box:hover {
+  background-color:green ;
 }
 
 .nav-mitra ul {
@@ -165,6 +180,7 @@
     width: 100%;
     box-shadow: 3px 3px rgb(223, 223, 223);
     border-radius: 10px;
+    background-color: green;
 }
 
 .nav-mitra ul:after {
@@ -177,19 +193,10 @@
     float:left;
 }
 
-.nav-mitra ul li:hover > a{
-    background:#53bd84;
-    color: white;
-}
-
-.nav-mitra ul li a:hover{
-    color:rgb(255, 255, 255);
-}
-
 .nav-mitra ul li a{
     display: block;
     padding: 10px;
-    color: rgb(116, 116, 116);
+    color: #ffffff;
     text-decoration: none;
     margin-left: 10px;
 }
@@ -215,7 +222,7 @@
 
 .nav-mitra ul ul li{
     float:none;
-    border-top: 1px soild #53bd84;
+    border-top: 1px soild green;
     border-bottom: 5px solid #F1F1F1;
     position: relative;
     border-radius: 10px;
@@ -224,9 +231,6 @@
 .nav-mitra ul ul li a{
     color: #3cac09;
     font-weight: bold;
-}
-.nav-mitra ul ul li a:hover{
-    background-color: #53bd84;
 }
 
 .nav-mitra ul ul ul{
@@ -242,6 +246,21 @@
     border-radius: 10px;
     box-shadow: 3px 3px rgb(223, 223, 223);
 }
+/* Add Detail Production Partner */
+.display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.title-data {
+    margin-top: 20px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 50px;
+    box-shadow: 3px 3px rgb(223, 223, 223);
+}
+
 .title-desc {
     padding: 0 20px;
     padding-top: 10px;
@@ -257,25 +276,22 @@
 }
 
 .table-mitra {
+    margin-top: 20px;
     width: 100%;
     border-radius: 10px;
     background-color: white;
-    margin-top: 20px;
+    padding: 2px;
 }
 .header {
-    margin-top: 20px;
-    height: 70px;
-    background-color: white;
-    border-radius: 10px;
+    width: 98.5%;
 }
 .title-header {
-    padding: 0 20px;
-    padding-top: 25px;
+    padding-left: 40px;
+    padding-top: 20px;
+    margin-bottom: 20px;
     float: left;
     width: 50%;
-}
-.title-header h4 a {
-    color: #3cac09;
+    margin-top: 20px;
 }
 .icon-header {
     width: 50%;
@@ -289,46 +305,77 @@
     align-items: center;
 }
 .icon-header-right {
-    margin-left: 30px;
+    margin-left: 10px;
+    text-align: center;
 }
 
 .icon-header-right img{
-    margin-right: 10px;
-    width: 30px;
+    margin-left: 15px;
+    width: 35px;
+    padding: 6px;
     border-radius: 5px;
 }
 .desc__ {
-    margin-left: -1px;
+    margin-left: 15px;
     margin-bottom: 20px;
 }
 .desc__ span {
-    font-size: 9pt;
+    font-size: 10pt;
 }
 
 .desc__upload {
     margin-left: -2px;
 }
 .desc__filter {
-    margin-left: 5.5px;
-}
-.download__img {
-    margin-right: 5px;
-    margin-left: 3px;
-}
-.desc__download {
-    margin-left: -1px;
+    margin-left: 7px;
 }
 
 .search {
     border: 1px solid grey;
     border-radius: 5px;
     font-size: 12pt;
-    height: 30px;
+    height: 35px;
     font-style: italic;
     margin-bottom: 40px;
 }
+.table1 {
+    font-family: sans-serif;
+    background-color: white;
+    border-collapse: collapse;
+    width: 96%;
+    margin: auto;
+    border-radius: 10px;
+}
 
+.table1 .thead{
+    background: #4c9b4c;
+    color: rgb(63, 63, 63);
+    font-weight: normal;
+    height: 70px;
+}
+.table1 .thead th span{
+    padding: 10px;
+    padding-right: 60px;
+    background-color: white;
+    border-radius: 5px;
+}
+.table1 .thead .th-no span{
+    padding: 10px;
+    text-align: center;
+}
+.table1 .thead .th-action span{
+    padding: 10px 18px 10px 18px;
+    text-align: center;
+}
 
+/* Scroll Tabel */
+.table-scroll {
+    max-height: 250px;
+    max-width: 100%;
+    overflow:auto;  
+}
+
+/* Table Custom */
 .table-custom thead tr{
     background-color: rgb(80, 170, 77);
 }
@@ -341,6 +388,7 @@
     background-color: white;
     border-radius: 5px
 }
+
 .border-side-1 {
     border-radius: 10px 0px 0px 10px;
 }
@@ -372,7 +420,6 @@
     background-color: rgb(206, 0, 86);
     color: white;
 }
-
 .table1 {
     font-family: sans-serif;
     background-color: white;
@@ -382,30 +429,23 @@
     border-radius: 10px;
 }
 
-.table1 .thead{
-    background: #4c9b4c;
-    color: rgb(63, 63, 63);
-    font-weight: normal;
-    height: 70px;
-}
-.table1 .thead th span{
-    padding: 10px;
-    padding-right: 60px;
-    background-color: white;
-    border-radius: 5px;
-}
-.table1 .thead .th-no span{
-    padding: 10px;
+.td-no {
     text-align: center;
 }
-.table1 .thead .th-action span{
-    padding: 10px 18px 10px 18px;
+.td-action {
     text-align: center;
+}
+.td-action a {
+    background-color: rgba(255, 36, 72, 0.801);
+    padding: 8px 18px 8px 18px;
+    border-radius: 8px;
+    color: white;
 }
 
 .table1, th, td {
     padding: 20px 20px;
     text-align: left;
+    font-size: 10pt;
 }
 .detail tr td input {
     border: 1px solid rgb(231, 224, 224);
@@ -413,11 +453,6 @@
     padding: 10px;
     font-weight: bold;
     font-style: normal;
-    font-size: 12pt;
-    margin-top: 5px;
-}
-.detail tr td {
-    font-size: 10pt;
 }
 .detail tr td textarea{
     width: 100%;
@@ -427,63 +462,11 @@
     border: 1px solid rgb(231, 224, 224);
     border-radius: 8px;
     font-style: normal;
-    font-size: 12pt;
 }
 .detail tr td {
     font-style: italic;
 }
 
-
-
-/*detail mitra*/
-.card_mitra {
-    width: 100%;
-    padding: 10px 0px 10px 20px;
-    margin-top: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 3px 3px rgb(223, 223, 223);
-    height: 70px;
-}
-.card_mitra .card__mitra_title {
-    margin-top: 10px;
-}
-.card_mitra .card__mitra_title h4 {
-    font-weight: bold;
-}
-.card_mitra .card__mitra_title h4 a{
-    margin-left: 22px;
-    font-size: 14pt;
-    text-decoration: underline;
-}
-.card_mitra .card__mitra_title h4 a:hover {
-    color: #3cac09;
-}
-.card_mitra .card__mitra_title h4 span{
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.card_mitra .card__mitra_title img{
-    width: 30px;
-    height: 30px;
-    float: right;
-    margin-top: -26px;
-    margin-right: 18px;
-    border-radius: 5px;
-}
-.card__mitra_txtdownload {
-    float: right;
-    font-size: 9pt;
-    margin-right: -40px;
-    margin-top: 2px;
-    color: grey;
-}
-
-.title__mitra_detail {
-    padding: 20px;
-    margin-left: 22px;
-    font-weight: bold;
-}
 @media(min-width:768px){
     .navbar-top-links .dropdown-messages,
     .navbar-top-links .dropdown-tasks,
@@ -511,56 +494,9 @@
         margin-left: 0px;
         padding-bottom: 10px;
     }
-    .table-custom {
+    .table1 .thead th span{
         font-size: 10pt;
-    }
-    .icon-header {
-        width: 50%;
-        float: right;
-    }
-    .position__right {
-        padding: 0 10px;
-        padding-top: 20px;
-        float: right;
-        display: flex;
-        align-items: center;
-    }
-    .icon-header-right {
-        margin-left: 10px;
-    }
-
-    .icon-header-right img{
-        margin-right: 2px;
-        width: 25px;
-        border-radius: 3px;
-    }
-    .desc__ {
-        margin-left: -1px;
-        margin-bottom: 20px;
-    }
-    .desc__ span {
-        font-size: 7pt;
-    }
-
-    .desc__upload {
-        margin-left: -2px;
-    }
-    .desc__filter {
-        margin-left: 2px;
-    }
-    .download__img {
-        margin-left: 5px;
-    }
-    .desc__download {
-        margin-left: -1px;
-    }
-
-    .search {
-        border: 1px solid grey;
-        border-radius: 5px;
-        font-size: 10pt;
-        height: 25px;
-        font-style: italic;
-        margin-bottom: 40px;
+        padding: 10px;
+        padding-right: 10px;
     }
 }
