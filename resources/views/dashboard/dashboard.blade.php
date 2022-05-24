@@ -2,7 +2,7 @@
 @section('content')
     <div class="row">
         <div class="col-md-3">
-            <div class="r3_counter_box shadow">
+            <div class="r3_counter_box shadow-custom">
                 <i class="pull-left fa fa-dollar icon-rounded"></i>
                 <div class="stats">
                     <h5><strong>$452</strong></h5>
@@ -11,7 +11,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="r3_counter_box shadow">
+            <div class="r3_counter_box shadow-custom">
                 <i class="pull-left fa fa-laptop user1 icon-rounded"></i>
                 <div class="stats">
                     <h5><strong>$1019</strong></h5>
@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="r3_counter_box shadow">
+            <div class="r3_counter_box shadow-custom">
                 <i class="pull-left fa fa-money user2 icon-rounded"></i>
                 <div class="stats">
                     <h5><strong>$1012</strong></h5>
@@ -29,7 +29,7 @@
             </div>
         </div>
         <div class="col-md-3">
-            <div class="r3_counter_box shadow">
+            <div class="r3_counter_box shadow-custom">
                 <i class="pull-left fa fa-pie-chart dollar1 icon-rounded"></i>
                 <div class="stats">
                     <h5><strong>$450</strong></h5>
@@ -69,23 +69,68 @@
                 .leaflet-container a.leaflet-popup-close-button {
                     display: none;
                 }
-
-                .map-inner {
-                    z-index: 9999;
-                    position: absolute;
-                }
-
             </style>
             <div class="card-custom shadow">
                 <div class="card-custom-body">
                     <div id="map">
-                        <div class="map-inner">
-                            <form class="searchbox-wrapper" action="" method="post">
-                                <input class="searchbox-input" type="search" placeholder="Cari Toko" aria-label="Search">
-                                <button class="btn searchbox-button" type="submit">
-                                    <span class="glyphicon glyphicon-search"></span>
-                                </button>
-                            </form>
+                        <div class="map-inner row">
+                            <div class="col-md-5 col-lg-5 col-xl-5">
+                                <form class="searchbox-wrapper" action="" method="post">
+                                    <input class="searchbox-input" type="search" placeholder="Cari Toko"
+                                        aria-label="Search">
+                                    <button class="btn searchbox-button" type="submit">
+                                        <span class="glyphicon glyphicon-search"></span>
+                                    </button>
+                                </form>
+
+                                <div class="card-custom" style="margin: 10px;">
+                                    <div class="card-custom-body">
+                                        <h5 class="card-custom-title"><b>ROJOKU STORE</b></h5>
+                                        <div class="_d-flex">
+                                            <p>Total rojoku store</p>
+                                            <p style="margin-left:auto">87 Toko</p>
+                                        </div>
+                                        <div class="_d-flex">
+                                            <p>Kecamatan Kedung</p>
+                                            <p style="margin-left:auto">30 Toko</p>
+                                        </div>
+                                        <div class="_d-flex">
+                                            <p>Kecamatan Welahan</p>
+                                            <p style="margin-left:auto">37 Toko</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-lg-3 col-xl-3 btn-rojoku-store-wrapper">
+                                <a href="" class="btn-rojoku-store">
+                                    <div class="btn-icon-rojoku-store">
+                                        <img src="{{ asset('assets/images/shopping-store.png') }}" alt="">
+                                    </div>
+                                    <div class="btn-text-rojoku-store">
+                                        Rojoku Store
+                                    </div>
+                                </a>
+                                <a href="" class="btn-rojoku-store" style="display: block; text-align:left">
+                                    <p><b>Kecamatan</b></p>
+                                    <p>Kedung</p>
+                                </a>
+                                <a href="" class="btn-rojoku-store" style="display: block; text-align:left">
+                                    <p><b>Desa / Kelurahan</b></p>
+                                    <p>Bugel</p>
+                                </a>
+                            </div>
+                            <div class="col-md-3 col-lg-3 col-xl-3 btn-rojoku-store-wrapper">
+                                <a href="" class="btn-rojoku-mart">
+                                    <div class="btn-icon-rojoku-mart">
+                                        <img src="{{ asset('assets/images/location.png') }}" alt="">
+                                    </div>
+                                    <div class="btn-text-rojoku-mart">
+                                        Rojoku Store
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="clearfix"> </div>
                         </div>
                     </div>
                 </div>
