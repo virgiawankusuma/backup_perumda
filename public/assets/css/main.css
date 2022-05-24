@@ -24,3 +24,19 @@ header .bg-dark-rgba {
 .navbar-dark .navbar-nav .nav-link {
     color: #fff;
 }
+.hover-box {
+    background-color: rgb(20, 109, 68);
+}
+.hover-box:hover {
+    color: #000 !important;
+    border: 1px solid #00a758;
+    background-color: #00a758;
+}
+.hover-box1 {
+    background-color: #198754;
+}
+.hover-box1:hover {
+    color: #000 !important;
+    border: 1px solid #00a758;
+    background-color: #00a758;
+}

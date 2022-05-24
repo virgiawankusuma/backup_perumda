@@ -77,7 +77,9 @@
                     style="height: auto;">
                     <a href="#" class="text-white" style="text-decoration: none">
                         <div class="d-flex justify-content-around align-items-center gap-4 pt-4 px-3">
-                            <i class="fa fa-id-card-o" style="font-size: 64px"></i>
+                            <img class="img-fluid" style="width:100px; height: 100px; filter:invert()"
+                                src="{{ asset('assets/images/Materi Design Home Screen Dashboard/curriculum.png') }}"
+                                alt="">
                             <header style="text-align: left!important">
                                 <h3 class="m-0 fw-bolder">MY ACCOUNT</h3>
                                 <p class="fw-light fs-5">Informasi tentang personal data dan akses sistem
@@ -90,7 +92,9 @@
                     style="height: auto; background-color: rgb(20, 109, 68);">
                     <a href="{{url('/dashboard')}}" class="text-white" style="text-decoration: none">
                         <div class="d-flex justify-content-around align-items-center gap-4 pt-4 px-3">
-                            <i class="fa fa-rocket" style="font-size: 64px"></i>
+                            <img class="img-fluid" style="width:100px; height: 100px; filter:invert()"
+                                src="{{ asset('assets/images/Materi Design Home Screen Dashboard/speed.png') }}"
+                                alt="">
                             <header style="text-align: left!important">
                                 <h3 class="m-0 fw-bolder">GO TO APLIKASI</h3>
                                 <p class="fw-light fs-5">Pergi ke aplikasi untuk menggunakan seluruh layanan
@@ -103,7 +107,9 @@
                     style="height: auto;">
                     <a href="#" class="text-white" style="text-decoration: none">
                         <div class="d-flex justify-content-around align-items-center gap-4 pt-4 px-3">
-                            <i class="fa fa-cogs" style="font-size: 64px"></i>
+                            <img class="img-fluid" style="width:100px; height: 100px; filter:invert()"
+                                src="{{ asset('assets/images/Materi Design Home Screen Dashboard/maintenance 2.png') }}"
+                                alt="">
                             <header style="text-align: left!important">
                                 <h3 class="m-0 fw-bolder">GENERAL SETTING</h3>
                                 <p class="fw-light fs-5">Lakukan general setting untuk optimalisasi penggunaan fitur
