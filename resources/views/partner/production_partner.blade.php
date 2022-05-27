@@ -6,7 +6,7 @@
     <ul>
         <li disabled>
             <a href="#">
-                <img src="{{asset('assets/images/mitra/Product-putih.png')}}" alt="">
+                <img src="{{asset('assets/images/mitra/Product.png')}}" alt="">
                 Mitra Produksi &nbsp; <span style="font-weight: bold">v</span>
             </a>
             <ul>
@@ -18,7 +18,7 @@
         </li>
         <li disabled>
             <a href="#">
-                <img src="{{asset('assets/images/mitra/penjualan-putih.png')}}" alt="">
+                <img src="{{asset('assets/images/mitra/penjualan.png')}}" alt="">
                 Mitra Penjualan &nbsp; <span style="font-weight: bold">v</span>
             </a>
             <ul>
@@ -29,7 +29,7 @@
         </li>
         <li disabled>
             <a href="#">
-                <img src="{{asset('assets/images/mitra/mitra supply putih.png')}}" alt="">
+                <img src="{{asset('assets/images/mitra/mitra supply.png')}}" alt="">
                 Mitra Suply &nbsp; <span style="font-weight: bold">v</span>
             </a>
             <ul>
@@ -40,7 +40,7 @@
         </li>
         <li disabled>
             <a href="#">
-                <img src="{{asset('assets/images/mitra/TOKO-putih.png')}}" alt="">
+                <img src="{{asset('assets/images/mitra/TOKO.png')}}" alt="">
                 Mitra Mart &nbsp; <span style="font-weight: bold">v</span>
             </a>
             <ul>
@@ -51,7 +51,7 @@
         </li>
         <li disabled>
             <a href="#">
-                <img src="{{asset('assets/images/mitra/fUNDING-putih.png')}}" alt="">
+                <img src="{{asset('assets/images/mitra/fUNDING.png')}}" alt="">
                 Mitra Funding &nbsp; <span style="font-weight: bold">v</span>
             </a>
             <ul>
@@ -61,7 +61,7 @@
             </ul>
         </li>
         <a href="#" class="home">
-            <img src="{{asset('assets/images/mitra/home5-putih.png')}}" alt="">
+            <img src="{{asset('assets/images/mitra/home5.png')}}" alt="">
         </a>
     </ul>
 </nav>

@@ -151,12 +151,14 @@
     display: block;
     width: 250px;
     text-align: left;
-    margin-top: 5px;
 }
 
 .nav-mitra ul li:hover > a{
     background:green;
     color: white;
+}
+.nav-mitra ul li:hover > a img{
+    filter: invert();
 }
 
 .nav-mitra ul li a:hover{
@@ -180,7 +182,6 @@ hover-box:hover {
     width: 100%;
     box-shadow: 3px 3px rgb(223, 223, 223);
     border-radius: 10px;
-    background-color: green;
 }
 
 .nav-mitra ul:after {
@@ -196,7 +197,7 @@ hover-box:hover {
 .nav-mitra ul li a{
     display: block;
     padding: 10px;
-    color: #ffffff;
+    color: #000;
     text-decoration: none;
     margin-left: 10px;
 }
@@ -204,6 +205,7 @@ hover-box:hover {
     width: 30px;
     height: 30px;
 }
+
 .home img{
     margin-top: 8px;
     float: right;

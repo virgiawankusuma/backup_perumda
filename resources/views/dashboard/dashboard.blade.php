@@ -70,7 +70,12 @@
                     display: none;
                 }
             </style>
-            <div class="card-custom shadow">
+            <div class="title-menu" style="margin-bottom: 20px">
+                <div class="title-desc">
+                    <h3>Peta Persebaran Toko</h3>
+                </div>
+            </div>
+            <div class="card-custom">
                 <div class="card-custom-body">
                     <div id="map">
                         <div class="map-inner row">
